@@ -576,11 +576,45 @@
         }
 
         /* Certifications */
-        .certifications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        .certifications-wrapper {
+            position: relative;
+            width: 100%;
             margin-top: 3rem;
+        }
+
+        .certifications-grid {
+            display: flex;
+            gap: 2rem;
+            padding: 2rem 0;
+            animation: scrollRight 60s linear infinite;
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-350px * 12 - 2rem * 12));
+            }
+        }
+
+        .certifications-grid:hover {
+            animation-play-state: paused;
+        }
+
+        .certifications-grid img {
+            flex: 0 0 350px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .certifications-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.25);
         }
 
         .cert-card {
@@ -603,7 +637,7 @@
         }
 
         .cert-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-6px) scale(1.05);
             box-shadow: 0 20px 40px rgba(0, 212, 255, 0.25);
         }
 
@@ -768,6 +802,20 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .certifications-grid img {
+                flex: 0 0 280px;
+                height: 220px;
+            }
+
+            @keyframes scrollRight {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-280px * 12 - 2rem * 12));
+                }
             }
         }
 
@@ -949,21 +997,36 @@
     <!-- Certifications Section -->
     <section id="certifications" class="reveal">
         <h2 class="section-title">Certifications</h2>
-        <div class="certifications-grid" id="cert-grid">
-            <!-- Add your static certification cards here -->
-             <img src="/Certificates/microsoft power bi.png">
-             <img src="/Certificates/aws.png">
-             <img src="/Certificates/ibm.png">
-             <img src="/Certificates/microsoft analyze.png">
-             <img src="/Certificates/Sql.png">
-             <img src="/Certificates/prompt engineering.png">
-             <img src="/Certificates/tata.png">
-             <img src="/Certificates/html,css.png">
-             <img src="/Certificates/javascript.png">
-             <img src="/Certificates/microsoft disciver data analysis.png">
-             <img src="/Certificates/n8n.png">
-             <img src="/Certificates/git.png">
-             
+        <div class="certifications-wrapper" style="overflow: hidden; width: 100%;">
+            <div class="certifications-grid" id="cert-grid">
+                <!-- Add your static certification cards here -->
+                 <img src="microsoft power bi.png" alt="Microsoft Power BI" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="aws.png" alt="AWS" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="ibm.png" alt="IBM" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="microsoft analyze.png" alt="Microsoft Analyze" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="Sql.png" alt="SQL" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="prompt engineering.png" alt="Prompt Engineering" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="tata.png" alt="Tata" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="html,css.png" alt="HTML CSS" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="javascript.png" alt="JavaScript" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="microsoft disciver data analysis.png" alt="Microsoft Discover Data Analysis" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="n8n.png" alt="N8N" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="git.png" alt="Git" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 
+                 <!-- Duplicate set for seamless loop -->
+                 <img src="microsoft power bi.png" alt="Microsoft Power BI" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="aws.png" alt="AWS" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="ibm.png" alt="IBM" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="microsoft analyze.png" alt="Microsoft Analyze" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="Sql.png" alt="SQL" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="prompt engineering.png" alt="Prompt Engineering" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="tata.png" alt="Tata" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="html,css.png" alt="HTML CSS" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="javascript.png" alt="JavaScript" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="microsoft disciver data analysis.png" alt="Microsoft Discover Data Analysis" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="n8n.png" alt="N8N" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+                 <img src="git.png" alt="Git" style="flex: 0 0 350px; height: 280px; object-fit: cover; border-radius: 12px;">
+            </div>
         </div>
     </section>
 
@@ -971,6 +1034,14 @@
     <section id="education" class="reveal">
         <h2 class="section-title">Education</h2>
         <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Master in Computer Application(MCA)</h3>
+                    
+                    <p>G H Raisoni Skill Tech University, Nagpur</p>
+                </div>
+            </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
@@ -1018,17 +1089,20 @@
             </div>
             <div class="project-card">
                 <div class="project-header">
-                    <i class="fas fa-code project-icon"></i>
+                    <i class="fas fa-credit-card project-icon"></i>
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Full-Stack Web Applications</h3>
-                    <p>Built multiple responsive web applications using modern technologies. Focused on creating scalable architectures and implementing best practices for performance optimization.</p>
+                    <h3 class="project-title">Payment Desk Website</h3>
+                    <p>A modern, responsive payment processing web application built with cutting-edge technologies. Features seamless payment integration, real-time transaction tracking, and an intuitive user interface for managing digital payments.</p>
                     <div class="project-tech">
                         <span class="tech-tag">JavaScript</span>
-                        <span class="tech-tag">PHP</span>
-                        <span class="tech-tag">MySQL</span>
                         <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">Payment Integration</span>
+                        <span class="tech-tag">Responsive Design</span>
                     </div>
+                    <a href="https://suyog83.github.io/Payment-desk/login.html" target="_blank" class="btn btn-primary" style="margin-top: 1.5rem; padding: 0.8rem 1.5rem; font-size: 0.9rem; display: inline-block;">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
                 </div>
             </div>
         </div>
